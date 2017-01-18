@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dashboard.DashboardController">
    <children>
@@ -11,7 +15,67 @@
         <tabs>
           <Tab text="Check In">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Group layoutX="14.0" layoutY="38.0">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Label fx:id="memberNameLabel" layoutY="18.725000381469727" text="Member Name:" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Avenir Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="memberName" focusColor="RED" labelFloat="true" layoutX="146.0" layoutY="16.725000381469727" unFocusColor="#00ff9d" />
+                                    <Label layoutX="52.0" layoutY="-13.0" text="M E M B E R    I N F O">
+                                       <font>
+                                          <Font name="Lucida Grande" size="21.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group layoutX="11.0" layoutY="48.00000190734863">
+                                 <children>
+                                    <Label fx:id="memberIDLabel" layoutY="12.724998474121094" text="Member PSID:" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Avenir Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="memberID" focusColor="RED" labelFloat="true" layoutX="135.0" layoutY="10.724998474121094" unFocusColor="#00ff9d" />
+                                 </children>
+                              </Group>
+                           </children>
+                        </Group>
+                        <Group layoutX="14.0" layoutY="186.0">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="18.725000381469727" text="Event Name:" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Avenir Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="eventName" focusColor="RED" labelFloat="true" layoutX="146.0" layoutY="16.725000381469727" unFocusColor="#00ff9d" />
+                                    <Label layoutX="52.0" layoutY="-13.0" text="E V E N T   I N F O">
+                                       <font>
+                                          <Font name="Lucida Grande" size="21.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group layoutX="11.0" layoutY="48.00000190734863">
+                                 <children>
+                                    <Label layoutX="24.0" layoutY="12.724998474121094" text="Event Date:" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Avenir Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <DatePicker fx:id="eventDate" layoutX="151.0" layoutY="62.0" onAction="#initialize" prefHeight="27.0" prefWidth="178.0" />
+                           </children>
+                        </Group>
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Membership Payment">

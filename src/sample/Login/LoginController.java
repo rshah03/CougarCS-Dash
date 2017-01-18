@@ -1,4 +1,4 @@
-package sample;
+package sample.Login;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -7,7 +7,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
 import sample.Dashboard.DashboardMain;
+import sample.Login.Login;
 
 public class LoginController {
 
@@ -29,10 +31,11 @@ public class LoginController {
         String password = pass.getText();
 
         if(username.equals("admin") && password.equals("cougarcs214")) {
+            user.setText("");
+            pass.setText("");
             System.out.println("Welcome, " + username + "!");
             System.out.println("Opening DashboardMain... (From LoginController)");
             new DashboardMain();
-
         }
         else {
             System.out.println("Incorrect credentials, try again.");

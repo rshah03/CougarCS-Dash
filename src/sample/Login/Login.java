@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 public class Login extends Stage {
 
-    Login() throws Exception{
+    public Login() throws Exception{
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("CougarCS Dash - All in One");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }

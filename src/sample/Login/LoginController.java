@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import sample.Dashboard.DashboardMain;
 
 public class LoginController {
 
@@ -23,12 +24,15 @@ public class LoginController {
     private JFXPasswordField pass;
 
     @FXML
-    void makeLogin(ActionEvent event) {
+    void makeLogin(ActionEvent event) throws Exception {
         String username = user.getText();
         String password = pass.getText();
 
         if(username.equals("admin") && password.equals("cougarcs214")) {
             System.out.println("Welcome, " + username + "!");
+            System.out.println("Opening DashboardMain... (From LoginController)");
+            new DashboardMain();
+
         }
         else {
             System.out.println("Incorrect credentials, try again.");

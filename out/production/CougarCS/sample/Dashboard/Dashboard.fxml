@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -17,7 +22,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Group layoutX="14.0" layoutY="38.0">
+                        <Group layoutX="14.0" layoutY="27.0">
                            <children>
                               <Group>
                                  <children>
@@ -46,7 +51,7 @@
                               </Group>
                            </children>
                         </Group>
-                        <Group layoutX="14.0" layoutY="186.0">
+                        <Group layoutX="-7.0" layoutY="154.0">
                            <children>
                               <Group>
                                  <children>
@@ -75,12 +80,83 @@
                               <DatePicker fx:id="eventDate" layoutX="151.0" layoutY="62.0" onAction="#initialize" prefHeight="27.0" prefWidth="178.0" />
                            </children>
                         </Group>
+                        <JFXButton fx:id="checkinButton" layoutX="98.0" layoutY="268.0" onAction="#initCheckin" prefHeight="41.0" prefWidth="145.0" text="Check In">
+                           <font>
+                              <Font name="Gill Sans" size="21.0" />
+                           </font>
+                        </JFXButton>
                      </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Membership Payment">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5484429065743944" layoutX="10.0" layoutY="8.0">
+                           <items>
+                              <Group>
+                                 <children>
+                                    <Group>
+                                       <children>
+                                          <Label fx:id="memberNameLabel1" layoutY="18.725000381469727" text="Member Name:" textAlignment="RIGHT">
+                                             <font>
+                                                <Font name="Avenir Roman" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="memberNamePayment" focusColor="RED" labelFloat="true" layoutX="146.0" layoutY="16.725000381469727" unFocusColor="#00ff9d" />
+                                          <Label layoutX="52.0" layoutY="-13.0" text="M E M B E R    I N F O">
+                                             <font>
+                                                <Font name="Lucida Grande" size="21.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Group>
+                                    <Group layoutX="11.0" layoutY="48.00000190734863">
+                                       <children>
+                                          <Label fx:id="memberIDLabel1" layoutY="12.724998474121094" text="Member PSID:" textAlignment="RIGHT">
+                                             <font>
+                                                <Font name="Avenir Roman" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="memberIDPayment" focusColor="RED" labelFloat="true" layoutX="135.0" layoutY="10.724998474121094" unFocusColor="#00ff9d" />
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </Group>
+                              <Group>
+                                 <children>
+                                    <Label layoutX="16.0" text="P A Y M E N T   I N F O">
+                                       <font>
+                                          <Font name="Lucida Grande" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="30.0" text="Payment Date:" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Avenir Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="paymentDate" layoutX="135.0" layoutY="32.0" onAction="#initialize" prefHeight="21.0" prefWidth="121.0" />
+                                    <ComboBox fx:id="paymentMethod" layoutX="135.0" layoutY="75.0" prefHeight="27.0" prefWidth="120.0" />
+                                    <Label layoutX="55.0" layoutY="74.0" text="Method:" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Avenir Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <RadioButton layoutX="85.0" layoutY="116.0" mnemonicParsing="false" text="1 Semester" />
+                                    <RadioButton layoutX="85.0" layoutY="146.0" mnemonicParsing="false" text="Full year" />
+                                 </children>
+                              </Group>
+                           </items>
+                        </SplitPane>
+                        <JFXButton fx:id="confirmPayment" layoutX="211.0" layoutY="190.0" onAction="#initPayment" text="Confirm Payment">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </JFXButton>
+                     </children></AnchorPane>
               </content>
             </Tab>
             <Tab text="T-Shirt">
